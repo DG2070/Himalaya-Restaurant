@@ -1,10 +1,12 @@
-import { InternalServerErrorException } from '@nestjs/common';
-import { AppDataSource } from 'src/database/data-source-configuration';
-import { QueryRunner } from 'typeorm';
+import { Logger } from "@nestjs/common";
+import { AppDataSource } from "src/database/data-source-configuration";
+import { QueryRunner } from "typeorm";
 
 export async function runInTransaction<T>(
-  operation: (queryRunner: QueryRunner) => Promise<T>,
+  operation: (queryRunner: QueryRunner) => Promise<T>
 ): Promise<T> {
+  const looger = new Logger();
+
   const queryRunner = AppDataSource.createQueryRunner();
   await queryRunner.connect();
   await queryRunner.startTransaction();
@@ -16,7 +18,8 @@ export async function runInTransaction<T>(
     return result;
   } catch (error) {
     await queryRunner.rollbackTransaction();
-    throw new InternalServerErrorException('Transaction failed', error.message);
+    looger.error(error.message, "Transaction Failed");
+    throw error;
   } finally {
     await queryRunner.release();
   }
