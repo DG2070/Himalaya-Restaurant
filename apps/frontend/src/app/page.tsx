@@ -2,11 +2,32 @@
 import MyButton from "@/components/shared/my-button";
 import GradientText from "@/components/shared/gradient-text";
 import Navbar from "@/components/shared/navbar";
+import MenuCard from "@/components/shared/menu-card";
 
 export default function Home() {
   return (
     <div className="p-4 flex flex-col gap-1">
       <MyButton onClick={() => console.log("clicked")}>click me</MyButton>
+      <div className="grid grid-cols-3 gap-4">
+        <MenuCard
+          title="Food"
+          subtitle="flat 20% off"
+          price={23}
+          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
+        />
+        <MenuCard
+          title="Food"
+          subtitle="flat 20% off"
+          price={23}
+          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
+        />
+        <MenuCard
+          title="Food"
+          subtitle="flat 20% off"
+          price={23}
+          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
+        />
+      </div>
       <div className="playfair-semibold-18">
         Playfair SemiBold 18: Hello Playfair SemiBold 18
       </div>
