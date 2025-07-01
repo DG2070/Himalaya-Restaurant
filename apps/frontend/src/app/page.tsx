@@ -1,3 +1,5 @@
+import Navbar from "@/components/shared/navbar";
+
 export default function Home() {
   return (
     <div className="p-4 flex flex-col gap-1">
@@ -59,6 +61,7 @@ export default function Home() {
       <div className="text-great-vibes-regular-26">Great Vibes Regular 26: Hello Great Vibes Regular 26</div>
       <div className="text-great-vibes-regular-32">Great Vibes Regular 32: Hello Great Vibes Regular 32</div>
       <div className="text-cinzel-bold-34">Cinzel Bold 34: Hello Cinzel Bold 34</div>
+      <Navbar />
     </div>
   );
 }
