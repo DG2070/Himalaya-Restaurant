@@ -18,7 +18,7 @@ const Hero = ({
   image: string;
 }) => {
   return (
-    <div className="w-full h-full relative grid place-items-center ">
+    <div className="w-full h-[796px] relative grid place-items-center">
       <Image
         alt="hero img"
         src={image}
