@@ -18,14 +18,34 @@ const MenuCard = ({
   return (
     <div className="flex items-center gap-24">
       {imageAlignment === "Left" && (
-        <img width={582} height={324} alt={title} src={imageUrl} />
+        <div className="min-w-[582px] min-h-[324px] relative rounded-[20px] ">
+          <Image
+            alt={title}
+            src={imageUrl}
+            layout="fill"
+            className="rounded-[20px]"
+          />
+        </div>
       )}
-      <div>
-        <div className="">{title}</div>
-        <div className="">{ingredients}</div>
+      <div className="flex flex-col gap-4">
+        <div className="text-primary playfair-bold-32 leading-[100%]!">
+          {title}
+        </div>
+        <div className="lato-regular-22 text-body leading-[180%]!">
+          Ingredients: {ingredients}
+        </div>
         <GradientText text={`$${price}`} className="cinzel-bold-34 py-1" />
       </div>
-      {imageAlignment === "Right" && <img alt={title} src={imageUrl} />}
+      {imageAlignment === "Right" && (
+        <div className="min-w-[582px] min-h-[324px] relative rounded-[20px] ">
+          <Image
+            alt={title}
+            src={imageUrl}
+            layout="fill"
+            className="rounded-[20px]"
+          />
+        </div>
+      )}
     </div>
   );
 };
