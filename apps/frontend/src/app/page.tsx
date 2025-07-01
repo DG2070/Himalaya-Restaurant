@@ -1,4 +1,3 @@
-"use client";
 import GradientText from "@/components/shared/gradient-text";
 import Header from "@/components/shared/header";
 import Hero from "@/components/shared/hero";
@@ -6,11 +5,12 @@ import MyButton from "@/components/shared/my-button";
 import Navbar from "@/components/shared/navbar";
 import PopularItemsCard from "@/components/shared/popular-items-card";
 import MenuCard from "@/components/shared/menu-card";
+import Discover from "@/components/shared/discover";
 
 export default function Home() {
   return (
     <div className="p-4 flex flex-col gap-1">
-      <MyButton onClick={() => console.log("clicked")}>click me</MyButton>
+      <MyButton>click me</MyButton>
       <div className="grid grid-cols-3 gap-4">
         <PopularItemsCard
           title="Food"
@@ -86,13 +86,25 @@ export default function Home() {
       <div className="cinzel-bold-34">Cinzel Bold 34: Hello Cinzel Bold 34</div>
       <Navbar />
       <GradientText text="gradient text" className="playfair-extrabold-62" />
-      <Hero buttons={true} title="DIVE INTO DELIGHTS OF" subtitle2="FOOD" subtitle1="DELECTABLE" description="Experience culinary excellence in an atmosphere of refined elegance. Where every dish tells a story and every moment becomes a memory."/>
+      <Hero
+        buttons={true}
+        title="DIVE INTO DELIGHTS OF"
+        subtitle2="FOOD"
+        subtitle1="DELECTABLE"
+        image="/discover.png"
+        description="Experience culinary excellence in an atmosphere of refined elegance. Where every dish tells a story and every moment becomes a memory."
+      />
       <div className="bg-black">
-
-      <Header title1="about us" title2="Discover What" title3="Sets Us Apart!"/>
-
-
+        <Header
+          title1="about us"
+          title2="Discover What"
+          title3="Sets Us Apart!"
+        />
+       
       </div>
+      <div className="my-2 bg-black">
+          <Discover />
+        </div>
     </div>
   );
 }

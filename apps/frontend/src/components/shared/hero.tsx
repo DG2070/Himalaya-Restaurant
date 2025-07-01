@@ -8,18 +8,20 @@ const Hero = ({
   subtitle2,
   description,
   buttons,
+  image
 }: {
   title?: string;
   description: string;
   subtitle1?: string;
   subtitle2: string;
   buttons: boolean;
+  image: string;
 }) => {
   return (
-    <div className="w-full h-[796px] relative grid place-items-center">
+    <div className="w-full h-full relative grid place-items-center ">
       <Image
         alt="hero img"
-        src="/f1462484db0e5beea3a4aea23510e1e64061fdba.png"
+        src={image}
         layout="fill"
         className="object-cover z-0"
       />
