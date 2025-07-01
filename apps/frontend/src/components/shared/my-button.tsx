@@ -5,7 +5,7 @@ import { Loader } from "lucide-react";
 
 interface MyButtonProps {
   children: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   className?: string;
   rounded?: boolean;
   active?: boolean;

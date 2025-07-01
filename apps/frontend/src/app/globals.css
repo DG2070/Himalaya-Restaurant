@@ -222,19 +222,19 @@
     font-family: var(--font-lato), sans-serif;
     font-weight: 400;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 32.4px;
   }
   .lato-regular-26 {
     font-family: var(--font-lato), sans-serif;
     font-weight: 400;
     font-size: 26px;
-    line-height: 24px;
+    line-height: 46.8px;
   }
   .lato-regular-22 {
     font-family: var(--font-lato), sans-serif;
     font-weight: 400;
     font-size: 22px;
-    line-height: 24px;
+    line-height: 39.6px;
   }
   .lato-semibold-16 {
     font-family: var(--font-lato), sans-serif;
