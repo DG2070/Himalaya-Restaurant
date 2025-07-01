@@ -31,7 +31,7 @@ export default function Home() {
           customerName="Ram Bahadur"
           customerPosition="customer"
           reviewText="hello World"
-          reviewInNumber={2}
+          reviewInNumber={2.5}
         />
       </div>
 
