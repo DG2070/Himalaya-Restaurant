@@ -6,6 +6,7 @@ import Navbar from "@/components/shared/navbar";
 import PopularItemsCard from "@/components/shared/popular-items-card";
 import MenuCard from "@/components/shared/menu-card";
 import Discover from "@/components/shared/discover";
+import Contact from "@/components/shared/contact";
 
 export default function Home() {
   return (
@@ -121,6 +122,7 @@ export default function Home() {
           reviewInNumber={2}
         />
       </div> */}
+      <Contact />
     </div>
   );
 }
