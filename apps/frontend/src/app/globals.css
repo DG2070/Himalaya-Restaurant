@@ -154,33 +154,33 @@
   }
 
   /* Playfair Display Typography */
-  .text-playfair-semibold-18 {
+  .playfair-semibold-18 {
     font-family: var(--font-playfair-display), serif;
     font-weight: 600;
     font-size: 18px;
     line-height: 24px;
   }
 
-  .text-playfair-semibold-24 {
+  .playfair-semibold-24 {
     font-family: var(--font-playfair-display), serif;
     font-weight: 600;
     font-size: 24px;
   }
 
-  .text-playfair-medium-22 {
+  .playfair-medium-22 {
     font-family: var(--font-playfair-display), serif;
     font-weight: 500;
     font-size: 22px;
     line-height: 24px;
   }
 
-  .text-playfair-medium-58 {
+  .playfair-medium-58 {
     font-family: var(--font-playfair-display), serif;
     font-weight: 500;
     font-size: 58px;
   }
 
-  .text-playfair-medium-62 {
+  .playfair-medium-62 {
     font-family: var(--font-playfair-display), serif;
     font-weight: 500;
     font-size: 62px;
@@ -192,58 +192,58 @@
     font-size: 62px;
   }
 
-  .text-playfair-bold-28 {
+  .playfair-bold-28 {
     font-family: var(--font-playfair-display), serif;
     font-weight: 700;
     font-size: 28px;
   }
 
   /* Lato Typography */
-  .text-lato-regular-14 {
+  .lato-regular-14 {
     font-family: var(--font-lato), sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
   }
 
-  .text-lato-regular-16 {
+  .lato-regular-16 {
     font-family: var(--font-lato), sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 18px;
   }
 
-  .text-lato-regular-18 {
+  .lato-regular-18 {
     font-family: var(--font-lato), sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
   }
-  .text-lato-regular-26 {
+  .lato-regular-26 {
     font-family: var(--font-lato), sans-serif;
     font-weight: 400;
     font-size: 26px;
     line-height: 24px;
   }
-  .text-lato-regular-22 {
+  .lato-regular-22 {
     font-family: var(--font-lato), sans-serif;
     font-weight: 400;
     font-size: 22px;
     line-height: 24px;
   }
-  .text-lato-semibold-16 {
+  .lato-semibold-16 {
     font-family: var(--font-lato), sans-serif;
     font-weight: 600;
     font-size: 16px;
     line-height: 18px;
   }
   /* Great Vibes Typography */
-  .text-great-vibes-regular-26 {
+  .great-vibes-regular-26 {
     font-family: var(--font-great-vibes), cursive;
     font-weight: 400;
     font-size: 26px;
   }
-  .text-great-vibes-regular-32 {
+  .great-vibes-regular-32 {
     font-family: var(--font-great-vibes), cursive;
     font-weight: 400;
     font-size: 32px;
@@ -251,16 +251,11 @@
   }
 
   /* Cinzel Typography */
-  .text-cinzel-bold-34 {
+  .cinzel-bold-34 {
     font-family: var(--font-cinzel), serif;
     font-weight: 700;
     font-size: 34px;
     line-height: 24px;
-  }
-
-  /* Gradient Utilities */
-  .linear-gradient {
-    background: linear-gradient(90deg, #dd5f34 0%, #ff7e5f 50%, #feb47b 100%);
   }
 
   .linear-gradient-2 {
