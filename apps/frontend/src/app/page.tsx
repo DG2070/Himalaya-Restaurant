@@ -4,6 +4,7 @@ import GradientText from "@/components/shared/gradient-text";
 import Navbar from "@/components/shared/navbar";
 import PopularItemsCard from "@/components/shared/popular-items-card";
 import MenuCard from "@/components/shared/menu-card";
+import ReviewCard from "@/components/shared/review-card";
 
 export default function Home() {
   return (
@@ -24,6 +25,32 @@ export default function Home() {
         imageAlignment="Left"
         imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
       />
+      <div className="grid grid-cols-4 gap-2">
+        <ReviewCard
+          customerName="Ram Bahadur"
+          customerPosition="customer"
+          reviewText="hello World"
+          reviewInNumber={2}
+        />
+        <ReviewCard
+          customerName="Ram Bahadur"
+          customerPosition="customer"
+          reviewText="hello World"
+          reviewInNumber={2}
+        />
+        <ReviewCard
+          customerName="Ram Bahadur"
+          customerPosition="customer"
+          reviewText="hello World"
+          reviewInNumber={2}
+        />
+        <ReviewCard
+          customerName="Ram Bahadur"
+          customerPosition="customer"
+          reviewText="hello World"
+          reviewInNumber={2}
+        />
+      </div>
 
       <div className="playfair-semibold-18">
         Playfair SemiBold 18: Hello Playfair SemiBold 18
