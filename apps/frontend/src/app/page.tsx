@@ -14,7 +14,7 @@ export default function Home() {
           <div className="size-14 rounded-full bg-primary border-2"></div>
           <div>Primary</div>
         </div>  
-        <div className="flex flex-col items-center"  >
+        <div className="flex flex-col items-center" >
           <div className="size-14 rounded-full bg-secondary border-2"></div>
           <div>Secondary</div>
         </div>
