@@ -5,7 +5,7 @@ import { Loader } from "lucide-react";
 
 interface MyButtonProps {
   children: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   className?: string;
   rounded?: boolean;
   active?: boolean;
@@ -27,7 +27,7 @@ const MyButton = ({
   return (
     <button
       className={cn(
-        "w-fit h1 p-3 text-center linear-gradient text-lato-semibold-16",
+        "w-fit h1 p-3 text-center bg-linear border-[1px] border-linear lato-semibold-16",
         rounded && "rounded-[100px]  border-primary ",
         active && "border-[1px] border-primary [background-image:none]!",
         disabled &&
