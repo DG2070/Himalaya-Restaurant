@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 const Navbar = () => {
   return (
@@ -8,7 +7,6 @@ const Navbar = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
             <Image  src={"/nav-img.png"} alt='naviagation image' width={50} height={50}/>
-          <h1 className="text-linear text-great-vibes-regular-26 bg-clip-text">Himalaya Restaurant</h1>
         </div>
 
         <nav className="flex items-center gap-8 text-playfair-medium-22">

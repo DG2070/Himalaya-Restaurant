@@ -47,6 +47,7 @@
   --color-heading: var(--heading);
   --color-red: var(--red);
   --color-body: var(--body);
+  --background-image-linear: var(--linear)
 }
 
 :root {
@@ -86,6 +87,12 @@
   --heading: oklch(0.9612 0 0);
   --red: oklch(0.5581 0.2069 27.23);
   --body: oklch(0.9067 0 0);
+  --linear: linear-gradient(
+    90deg,
+    oklch(0.65 0.15 35) 0%,
+    oklch(0.72 0.13 42) 50%,
+    oklch(0.82 0.09 75) 100% 
+  );
 }
 
 .dark {
@@ -179,7 +186,7 @@
     font-size: 62px;
   }
 
-  .text-playfair-extrabold-62 {
+  .playfair-extrabold-62 {
     font-family: var(--font-playfair-display), serif;
     font-weight: 800;
     font-size: 62px;
@@ -243,7 +250,6 @@
     line-height: 24px;
   }
 
-
   /* Cinzel Typography */
   .text-cinzel-bold-34 {
     font-family: var(--font-cinzel), serif;
@@ -258,7 +264,8 @@
   }
 
   .linear-gradient-2 {
-    background: linear-gradient(180deg, #1e1e1e 0%, rgba(221, 95, 52, 0.6) 100%),
+    background:
+      linear-gradient(180deg, #1e1e1e 0%, rgba(221, 95, 52, 0.6) 100%),
       url("/Rectangle.png") lightgray 0px -191.662px / 100% 300.499% no-repeat;
   }
 

@@ -1,3 +1,4 @@
+import GradientText from "@/components/shared/gradient-text";
 import Navbar from "@/components/shared/navbar";
 
 export default function Home() {
@@ -50,7 +51,7 @@ export default function Home() {
       <div className="text-playfair-medium-22">Playfair Medium 22: Hello Playfair Medium 22</div>
       <div className="text-playfair-medium-58">Playfair Medium 58: Hello Playfair Medium 58</div>
       <div className="text-playfair-medium-62">Playfair Medium 62: Hello Playfair Medium 62</div>
-      <div className="text-playfair-extrabold-62">Playfair ExtraBold 62: Hello Playfair ExtraBold 62</div>
+      <div className="text-playfair-extrabold-62 bg-linear  hover:bg-black  hover:[background-image:none]">Playfair ExtraBold 62: Hello Playfair ExtraBold 62</div>
       <div className="text-playfair-bold-28">Playfair Bold 28: Hello Playfair Bold 28</div>
       <div className="text-lato-regular-14  ">Lato Regular 14: Hello Lato Regular 14</div>
       <div className="text-lato-regular-16">Lato Regular 16: Hello Lato Regular 16</div>
@@ -62,6 +63,7 @@ export default function Home() {
       <div className="text-great-vibes-regular-32">Great Vibes Regular 32: Hello Great Vibes Regular 32</div>
       <div className="text-cinzel-bold-34">Cinzel Bold 34: Hello Cinzel Bold 34</div>
       <Navbar />
+      <GradientText text="gradient text" className="playfair-extrabold-62"/>
     </div>
   );
 }
