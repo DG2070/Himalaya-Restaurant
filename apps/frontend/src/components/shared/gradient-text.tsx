@@ -6,7 +6,7 @@ interface GradientTextProps {
   className?: string
 }
 
-const GradientText: React.FC<GradientTextProps> = ({ text, className }) => {
+const GradientText = ({ text, className }:GradientTextProps) => {
   return (
     <h1
       className={cn('bg-clip-text text-transparent w-fit', className)}

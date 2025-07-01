@@ -1,4 +1,5 @@
 import GradientText from "@/components/shared/gradient-text";
+import Hero from "@/components/shared/hero";
 import Navbar from "@/components/shared/navbar";
 
 export default function Home() {
@@ -64,6 +65,7 @@ export default function Home() {
       <div className="cinzel-bold-34">Cinzel Bold 34: Hello Cinzel Bold 34</div>
       <Navbar />
       <GradientText text="gradient text" className="playfair-extrabold-62"/>
+      <Hero title=""/>
     </div>
   );
 }
