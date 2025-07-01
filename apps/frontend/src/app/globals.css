@@ -197,6 +197,11 @@
     font-weight: 700;
     font-size: 28px;
   }
+  .playfair-bold-32 {
+    font-family: var(--font-playfair-display), serif;
+    font-weight: 700;
+    font-size: 32px;
+  }
 
   /* Lato Typography */
   .lato-regular-14 {

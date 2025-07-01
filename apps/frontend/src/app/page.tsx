@@ -16,26 +16,15 @@ export default function Home() {
           price={23}
           imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
         />
-        <PopularItemsCard
-          title="Food"
-          subtitle="flat 20% off"
-          price={23}
-          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
-        />
-        <PopularItemsCard
-          title="Food"
-          subtitle="flat 20% off"
-          price={23}
-          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
-        />
       </div>
       <MenuCard
         title="Food"
-        ingredients="flat 20% off"
+        ingredients="flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off "
         price={23}
         imageAlignment="Left"
         imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
       />
+
       <div className="playfair-semibold-18">
         Playfair SemiBold 18: Hello Playfair SemiBold 18
       </div>
