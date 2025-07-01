@@ -48,6 +48,7 @@
   --color-red: var(--red);
   --color-body: var(--body);
   --background-image-linear: var(--linear);
+
 }
 
 :root {
@@ -262,6 +263,7 @@
     font-size: 34px;
     line-height: 24px;
   }
+
 
   .linear-gradient-2 {
     background:
