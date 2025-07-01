@@ -47,7 +47,7 @@
   --color-heading: var(--heading);
   --color-red: var(--red);
   --color-body: var(--body);
-  --background-image-linear: var(--linear)
+  --background-image-linear: var(--linear);
 }
 
 :root {
@@ -91,7 +91,7 @@
     90deg,
     oklch(0.65 0.15 35) 0%,
     oklch(0.72 0.13 42) 50%,
-    oklch(0.82 0.09 75) 100% 
+    oklch(0.82 0.09 75) 100%
   );
 }
 

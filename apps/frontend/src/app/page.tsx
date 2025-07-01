@@ -4,11 +4,40 @@ import Header from "@/components/shared/header";
 import Hero from "@/components/shared/hero";
 import MyButton from "@/components/shared/my-button";
 import Navbar from "@/components/shared/navbar";
+import PopularItemsCard from "@/components/shared/popular-items-card";
+import MenuCard from "@/components/shared/menu-card";
 
 export default function Home() {
   return (
     <div className="p-4 flex flex-col gap-1">
       <MyButton onClick={() => console.log("clicked")}>click me</MyButton>
+      <div className="grid grid-cols-3 gap-4">
+        <PopularItemsCard
+          title="Food"
+          subtitle="flat 20% off"
+          price={23}
+          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
+        />
+        <PopularItemsCard
+          title="Food"
+          subtitle="flat 20% off"
+          price={23}
+          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
+        />
+        <PopularItemsCard
+          title="Food"
+          subtitle="flat 20% off"
+          price={23}
+          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
+        />
+      </div>
+      <MenuCard
+        title="Food"
+        ingredients="flat 20% off"
+        price={23}
+        imageAlignment="Left"
+        imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
+      />
       <div className="playfair-semibold-18">
         Playfair SemiBold 18: Hello Playfair SemiBold 18
       </div>
