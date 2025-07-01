@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Hero = ({
@@ -14,12 +15,15 @@ const Hero = ({
   buttons: boolean;
 }) => {
   return (
-    <div className="w-screen h-[796px] grid place-items-center">
-      <div>{title}</div>
-      <div>{subtitle1}</div>
-      <div>{subtitle2}</div>
-      <div>{description}</div>
-      {buttons && <div></div>}
+    <div className="w-screen h-[796px] grid place-items-center bg-red">
+      <Image  alt="hero img" src="/f1462484db0e5beea3a4aea23510e1e64061fdba.png" />
+      <div className="text-heading">
+        <div>{title}</div>
+        <div>{subtitle1}</div>
+        <div>{subtitle2}</div>
+        <div>{description}</div>
+        {buttons && <div></div>}
+      </div>
     </div>
   );
 };
