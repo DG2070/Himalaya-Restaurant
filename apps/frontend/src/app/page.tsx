@@ -5,6 +5,7 @@ import Navbar from "@/components/shared/navbar";
 import PopularItemsCard from "@/components/shared/popular-items-card";
 import MenuCard from "@/components/shared/menu-card";
 import ReviewCard from "@/components/shared/review-card";
+import Footer from "@/components/shared/footer";
 
 export default function Home() {
   return (
@@ -100,6 +101,7 @@ export default function Home() {
       <div className="cinzel-bold-34">Cinzel Bold 34: Hello Cinzel Bold 34</div>
       <Navbar />
       <GradientText text="gradient text" className="playfair-extrabold-62" />
+      <Footer />
     </div>
   );
 }
