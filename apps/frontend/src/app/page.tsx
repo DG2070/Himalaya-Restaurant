@@ -122,7 +122,7 @@ export default function Home() {
         imageAlignment="Left"
         imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
       />
-      {/* <div className="grid grid-cols-4 gap-2">
+      <div className="grid grid-cols-4 gap-2">
         <ReviewCard
           customerName="Ram Bahadur"
           customerPosition="customer"
@@ -147,7 +147,7 @@ export default function Home() {
           reviewText="hello World"
           reviewInNumber={2}
         />
-      </div> */}
+      </div>
       <Contact />
       <Footer />
     </div>
