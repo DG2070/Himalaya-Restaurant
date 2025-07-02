@@ -8,13 +8,13 @@ const Hero = ({
   subtitle2,
   description,
   buttons,
-  image
+  image,
 }: {
   title?: string;
   description: string;
   subtitle1?: string;
   subtitle2: string;
-  buttons: boolean;
+  buttons?: boolean;
   image: string;
 }) => {
   return (
@@ -44,17 +44,19 @@ const Hero = ({
         <div className="pb-12 lato-regular-26 text-body max-w-5xl">
           {description}
         </div>
-        <div className="grid place-items-center"> {buttons && (
-          <div className="flex gap-6 lato-semibold-16">
-            <MyButton>
-              <div className=" text-[#1C1C1C]">MAKE RESERVATION</div>
-            </MyButton>
-            <MyButton rounded active>
-              <div className="text-heading" >EXPLORE MENU</div>
-            </MyButton>
-          </div>
-        )}</div>
-       
+        <div className="grid place-items-center">
+          {" "}
+          {buttons && (
+            <div className="flex gap-6 lato-semibold-16">
+              <MyButton>
+                <div className=" text-[#1C1C1C]">MAKE RESERVATION</div>
+              </MyButton>
+              <MyButton rounded active>
+                <div className="text-heading">EXPLORE MENU</div>
+              </MyButton>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

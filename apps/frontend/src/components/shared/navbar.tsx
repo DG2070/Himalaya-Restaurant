@@ -64,7 +64,7 @@ const Navbar = () => {
   );
 
   return (
-    <header className="w-full px-4 sm:px-6 lg:px-8 py-3 bg-black">
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-3 bg-black">
       <div className="flex items-center justify-between">
         {/* Logo Section */}
         <div className="flex items-center gap-2 sm:gap-4">
@@ -122,7 +122,7 @@ const Navbar = () => {
           </SheetContent>
         </Sheet>
       </div>
-    </header>
+    </div>
   );
 };
 
