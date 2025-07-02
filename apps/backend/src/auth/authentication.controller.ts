@@ -42,7 +42,6 @@ export class AuthenticationController {
   @Post('sign-up-user')
   @RequiredPermissions(RolePermissions.createUser)
   async signUpUser(@Body() signUpUserDto: SignUpUserDto) {
-    console.log('hello');
     return await this.authenticationService.signUpUser(signUpUserDto);
   }
 

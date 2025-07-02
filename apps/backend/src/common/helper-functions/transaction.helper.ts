@@ -1,5 +1,5 @@
 import { Logger } from "@nestjs/common";
-import { AppDataSource } from "src/database/data-source-configuration";
+import { AppDataSource } from "src/database/data-source";
 import { QueryRunner } from "typeorm";
 
 export async function runInTransaction<T>(

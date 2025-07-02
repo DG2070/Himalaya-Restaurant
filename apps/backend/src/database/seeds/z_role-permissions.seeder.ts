@@ -15,7 +15,7 @@ export class RolesPermissionsSeeder implements Seeder {
     const allPermissions = await permissionRepository.find();
     const normalPermissions = await permissionRepository.find({
       where: {
-        name: In(["add_data", "read_data", "update_data", "delete_data"]),
+        name: In(["add_data", "read_data", "update_data", "delete_data", ]),
       },
     });
 
