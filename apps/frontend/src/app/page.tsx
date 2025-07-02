@@ -8,6 +8,8 @@ import PopularItemsCard from "@/components/shared/popular-items-card";
 import Discover from "@/components/shared/discover";
 import Contact from "@/components/shared/contact";  
 import ReviewCard from "@/components/shared/review-card";
+import Hero from "@/components/shared/hero";
+import Header from "@/components/shared/header";
 
 export default function Home() {
   return (
