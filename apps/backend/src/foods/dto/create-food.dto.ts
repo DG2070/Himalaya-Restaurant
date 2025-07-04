@@ -56,6 +56,15 @@ export class CreateFoodDto {
   isSpecialFood: boolean;
 
   @Transform(({ value }) => {
+    if (value === "true") return true;
+    if (value === "false") return false;
+    return value;
+  })
+  @IsBoolean({ message: "Popular status must be true or false." })
+  @IsNotEmpty({ message: "Popular status is required." })
+  isPopularFood: boolean;
+
+  @Transform(({ value }) => {
     if (typeof value == "string" && value.trim() == "") return 0;
     const number = Number(value);
     return isNaN(number) ? value : number;

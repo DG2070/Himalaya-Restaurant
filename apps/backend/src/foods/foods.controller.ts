@@ -45,6 +45,12 @@ export class FoodsController {
   }
 
   @Auth(AuthType.None)
+  @Get("foods/available")
+  availableFoods() {
+    return this.foodsService.findAvailableFoods();
+  }
+
+  @Auth(AuthType.None)
   @Get("foods/:id")
   findOne(@Param("id") id: string) {
     return this.foodsService.findOne(+id);

@@ -70,6 +70,7 @@ export class FoodsService {
           "priceHKDollar",
           "isAvailable",
           "isSpecialFood",
+          "isPopularFood",
         ],
       })
     );
@@ -88,6 +89,7 @@ export class FoodsService {
           "priceHKDollar",
           "isAvailable",
           "isSpecialFood",
+          "isPopularFood",
         ],
         where: { id },
       })
@@ -164,7 +166,9 @@ export class FoodsService {
       })
     );
     if (error) {
-      throw new InternalServerErrorException(`Error while fetching Foods.`);
+      throw new InternalServerErrorException(
+        `Error while fetching special Foods.`
+      );
     }
     return foods;
   }
@@ -185,7 +189,55 @@ export class FoodsService {
       })
     );
     if (error) {
-      throw new InternalServerErrorException(`Error while fetching Foods.`);
+      throw new InternalServerErrorException(
+        `Error while fetching other than special Foods.`
+      );
+    }
+    return foods;
+  }
+
+  async findAvailableFoods() {
+    const [foods, error] = await safeError(
+      this.foodRepository.find({
+        select: [
+          "id",
+          "name",
+          "nameHK",
+          "description",
+          "priceHKDollar",
+          "isAvailable",
+          "isSpecialFood",
+        ],
+        where: { isAvailable: true },
+      })
+    );
+    if (error) {
+      throw new InternalServerErrorException(
+        `Error while fetching all Available Foods.`
+      );
+    }
+    return foods;
+  }
+
+  async findPopularFoods() {
+    const [foods, error] = await safeError(
+      this.foodRepository.find({
+        select: [
+          "id",
+          "name",
+          "nameHK",
+          "description",
+          "priceHKDollar",
+          "isAvailable",
+          "isSpecialFood",
+        ],
+        where: { isPopularFood: true },
+      })
+    );
+    if (error) {
+      throw new InternalServerErrorException(
+        `Error while fetching popular Foods.`
+      );
     }
     return foods;
   }
@@ -205,6 +257,7 @@ export class FoodsService {
           "food.priceHKDollar",
           "food.isAvailable",
           "food.isSpecialFood",
+          "food.isPopularFood",
           "foodGroup.id",
           "foodGroup.name",
         ])
@@ -213,7 +266,9 @@ export class FoodsService {
     );
 
     if (error) {
-      throw new InternalServerErrorException(`Error while fetching Foods.`);
+      throw new InternalServerErrorException(
+        `Error while fetching Foods for group id ${id}.`
+      );
     }
 
     return foods;

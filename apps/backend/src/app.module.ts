@@ -11,6 +11,7 @@ import { UserModule } from "./user/user.module";
 import { MailingModule } from "./common/helper-modules/mailing/mailing.module";
 import { FoodsModule } from "./foods/foods.module";
 import { FoodGroupsModule } from "./food-groups/food-groups.module";
+import { ContactUsModule } from './contact-us/contact-us.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { FoodGroupsModule } from "./food-groups/food-groups.module";
     AuthModule,
     FoodGroupsModule,
     FoodsModule,
+    ContactUsModule,
   ],
   providers: [
     {
