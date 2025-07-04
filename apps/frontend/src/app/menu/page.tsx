@@ -52,7 +52,6 @@ const Menu = () => {
         text="Restaurant"
         colorText="Menu"
       />
-      <div></div>
     </div>
   );
 };
