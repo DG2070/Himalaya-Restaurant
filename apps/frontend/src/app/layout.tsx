@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Lato, Cinzel, Playfair_Display, Great_Vibes } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/shared/footer";
+import Navbar from "@/components/shared/navbar";
 
 const lato = Lato({
   variable: "--font-lato",
@@ -38,10 +40,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${lato.variable} ${cinzel.variable} ${playfairDisplay.variable} ${greatVibes.variable} antialiased`}
-      >
-        {children}
+      <body>
+        <Navbar />
+        <div
+          className={`${lato.variable} ${cinzel.variable} ${playfairDisplay.variable} ${greatVibes.variable} antialiased`}
+        >
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   );
