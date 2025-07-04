@@ -161,6 +161,7 @@ export class FoodsService {
           "priceHKDollar",
           "isAvailable",
           "isSpecialFood",
+          "isPopularFood",
         ],
         where: { isSpecialFood: true },
       })
@@ -184,6 +185,7 @@ export class FoodsService {
           "priceHKDollar",
           "isAvailable",
           "isSpecialFood",
+          "isPopularFood",
         ],
         where: { isSpecialFood: false },
       })
@@ -207,6 +209,7 @@ export class FoodsService {
           "priceHKDollar",
           "isAvailable",
           "isSpecialFood",
+          "isPopularFood",
         ],
         where: { isAvailable: true },
       })
@@ -230,6 +233,7 @@ export class FoodsService {
           "priceHKDollar",
           "isAvailable",
           "isSpecialFood",
+          "isPopularFood",
         ],
         where: { isPopularFood: true },
       })

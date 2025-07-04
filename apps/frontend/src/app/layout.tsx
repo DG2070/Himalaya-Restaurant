@@ -43,7 +43,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <div
-          className={`${lato.variable} ${cinzel.variable} ${playfairDisplay.variable} ${greatVibes.variable} antialiased`}
+          className={`${lato.variable} ${cinzel.variable} ${playfairDisplay.variable} ${greatVibes.variable} antialiased bg-[#1E1E1E]`}
         >
           {children}
         </div>

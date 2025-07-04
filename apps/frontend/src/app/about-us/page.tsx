@@ -4,13 +4,13 @@ import Image from "next/image";
 
 const Page = () => {
   return (
-    <div className="bg-black text-body">
+    <div className="bg-black text-body ">
       <HeaderText
         cursiveText="Our Foundation"
         text="The Story Behind"
         colorText="Every Favour"
       />
-      <div className="flex items-center justify-between px-16">
+      <div className="flex items-center justify-between px-16 container mx-auto">
         <div className="relative w-full max-w-xl aspect-[718/499]">
           <Image src="/about-1.png" alt="About Us Image" fill />
         </div>
@@ -34,7 +34,7 @@ const Page = () => {
         text="Traditional"
         colorText="Techniques"
       />
-      <div className="flex items-center justify-between px-16 pb-4">
+      <div className="flex items-center justify-between container mx-auto px-16 pb-4">
         <div className="w-[600px] flex flex-col gap-3 text-body text-justify lato-regular-16 leading-[180%] bg-white/5 rounded-[16px] backdrop-blur-[4px] px-8 py-8">
           <GradientText
             text="Ancient Methods, Modern Kitchen"

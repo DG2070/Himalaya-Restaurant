@@ -11,7 +11,7 @@ const Menu = () => {
         text="Our Popular"
         colorText="Items"
       />
-      <div className="grid grid-cols-2 gap-4 mb-8">
+      <div className="grid grid-cols-2 gap-4 mb-8 container mx-auto">
         {[
           {
             title: "Four Cheese Pizza",

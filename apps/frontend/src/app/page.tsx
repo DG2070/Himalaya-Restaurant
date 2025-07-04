@@ -1,92 +1,14 @@
-"use client";
-import Footer from "@/components/shared/footer";
-import GradientText from "@/components/shared/gradient-text";
+import Discover from "@/components/shared/discover";
+import HeaderText from "@/components/shared/header-text";
+import Hero from "@/components/shared/hero";
 import MenuCard from "@/components/shared/menu-card";
 import MyButton from "@/components/shared/my-button";
-import Navbar from "@/components/shared/navbar";
 import PopularItemsCard from "@/components/shared/popular-items-card";
-import Discover from "@/components/shared/discover";
-import Contact from "@/components/shared/contact";  
 import ReviewCard from "@/components/shared/review-card";
-import Hero from "@/components/shared/hero";
-import Header from "@/components/shared/header";
 
 export default function Home() {
   return (
-    <div className="p-4 flex flex-col gap-1 ">
-      <MyButton>click me</MyButton>
-      <div className="grid grid-cols-3 gap-4">
-        <PopularItemsCard
-          title="Food"
-          subtitle="flat 20% off"
-          price={23}
-          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
-        />
-      </div>
-      <MenuCard
-        title="Food"
-        ingredients="flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off "
-        price={23}
-        imageAlignment="Left"
-        imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
-      />
-      <div className="grid grid-cols-4 gap-2">
-        <ReviewCard
-          customerName="Ram Bahadur"
-          customerPosition="customer"
-          reviewText="hello World"
-          reviewInNumber={2.5}
-        />
-      </div>
-
-      <div className="playfair-semibold-18">
-        Playfair SemiBold 18: Hello Playfair SemiBold 18
-      </div>
-      <div className="playfair-semibold-24">
-        Playfair SemiBold 24: Hello Playfair SemiBold 24
-      </div>
-      <div className="playfair-medium-22">
-        Playfair Medium 22: Hello Playfair Medium 22
-      </div>
-      <div className="playfair-medium-58">
-        Playfair Medium 58: Hello Playfair Medium 58
-      </div>
-      <div className="playfair-medium-62">
-        Playfair Medium 62: Hello Playfair Medium 62
-      </div>
-      <div className="playfair-extrabold-62 bg-linear  hover:bg-black  hover:[background-image:none]">
-        Playfair ExtraBold 62: Hello Playfair ExtraBold 62
-      </div>
-      <div className="playfair-bold-28">
-        Playfair Bold 28: Hello Playfair Bold 28
-      </div>
-      <div className="lato-regular-14  ">
-        Lato Regular 14: Hello Lato Regular 14
-      </div>
-      <div className="lato-regular-16">
-        Lato Regular 16: Hello Lato Regular 16
-      </div>
-      <div className="lato-regular-18">
-        Lato Regular 18: Hello Lato Regular 18
-      </div>
-      <div className="lato-regular-26">
-        Lato Regular 26: Hello Lato Regular 26
-      </div>
-      <div className="lato-regular-22">
-        Lato Regular 22: Hello Lato Regular 22
-      </div>
-      <div className="lato-semibold-16">
-        Lato SemiBold 16: Hello Lato SemiBold 16
-      </div>
-      <div className="great-vibes-regular-26">
-        Great Vibes Regular 26: Hello Great Vibes Regular 26
-      </div>
-      <div className="great-vibes-regular-32">
-        Great Vibes Regular 32: Hello Great Vibes Regular 32
-      </div>
-      <div className="cinzel-bold-34">Cinzel Bold 34: Hello Cinzel Bold 34</div>
-      <Navbar />
-      <GradientText text="gradient text" className="playfair-extrabold-62" />
+    <div>
       <Hero
         buttons={true}
         title="DIVE INTO DELIGHTS OF"
@@ -95,61 +17,90 @@ export default function Home() {
         image="/discover.png"
         description="Experience culinary excellence in an atmosphere of refined elegance. Where every dish tells a story and every moment becomes a memory."
       />
-      <div className="bg-black">
-        <Header
-          title1="about us"
-          title2="Discover What"
-          title3="Sets Us Apart!"
+      <div className="p-8 container mx-auto">
+        {" "}
+        <HeaderText
+          colorText="Sets Us Apart!"
+          cursiveText="about us"
+          text="Discover What"
         />
-       
+        <Discover />
       </div>
-      <div className="my-2 bg-black">
-          <Discover />
+      <div className="p-8 container mx-auto">
+        {" "}
+        <HeaderText
+          colorText="Items"
+          cursiveText="Customers Favourite"
+          text="Our Popular"
+        />
+        <div className="flex flex-col gap-[38px]">
+          <div className="grid grid-cols-7 gap-12">
+            <div className="col-span-3 ">
+              {" "}
+              <PopularItemsCard
+                imageUrl="/popular-item-1.png"
+                price={55}
+                subtitle="Free delivery for first order"
+                title="Four Cheese Pizza"
+              />
+            </div>
+
+            <div className="col-span-4">
+              <PopularItemsCard
+                imageUrl="/popular-item-1.png"
+                price={55}
+                subtitle="Free delivery for first order"
+                title="Four Cheese Pizza"
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-7 gap-12">
+            <div className="col-span-4 ">
+              {" "}
+              <PopularItemsCard
+                imageUrl="/popular-item-1.png"
+                price={55}
+                subtitle="Free delivery for first order"
+                title="Four Cheese Pizza"
+              />
+            </div>
+
+            <div className="col-span-3">
+              <PopularItemsCard
+                imageUrl="/popular-item-1.png"
+                price={55}
+                subtitle="Free delivery for first order"
+                title="Four Cheese Pizza"
+              />
+            </div>
+          </div>
         </div>
-        <MyButton>click me</MyButton>
-      <div className="grid grid-cols-3 gap-4">
-        <PopularItemsCard
-          title="Food"
-          subtitle="flat 20% off"
-          price={23}
-          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
-        />
       </div>
-      <MenuCard
-        title="Food"
-        ingredients="flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off flat 20% off "
-        price={23}
-        imageAlignment="Left"
-        imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GNu9Yz19Rb0vc3tIfL-mqpls4wVDGTz5Wg&s"
-      />
-      <div className="grid grid-cols-4 gap-2">
-        <ReviewCard
-          customerName="Ram Bahadur"
-          customerPosition="customer"
-          reviewText="hello World"
-          reviewInNumber={2}
-        />
-        <ReviewCard
-          customerName="Ram Bahadur"
-          customerPosition="customer"
-          reviewText="hello World"
-          reviewInNumber={2}
-        />
-        <ReviewCard
-          customerName="Ram Bahadur"
-          customerPosition="customer"
-          reviewText="hello World"
-          reviewInNumber={2}
-        />
-        <ReviewCard
-          customerName="Ram Bahadur"
-          customerPosition="customer"
-          reviewText="hello World"
-          reviewInNumber={2}
-        />
+      <div className="p-8 container mx-auto">
+        <HeaderText colorText="Menu" cursiveText="Good Food FOr You" text="Resturant "/>
+        <div className="flex pb-8 gap-[22px] w-full items-center justify-center">
+          <MyButton active className="lato-semibold-16 text-heading"> Alacarte Menu </MyButton>
+          <MyButton className="lato-semibold-16 text-[#1c1c1c]"> Drinks Menu </MyButton>
+          <MyButton className="lato-semibold-16 text-[#1c1c1c]"> Set Lunch Menu </MyButton>
+          <MyButton className="lato-semibold-16 text-[#1c1c1c]"> All Day Brunch Menu </MyButton>
+          <MyButton className="lato-semibold-16 text-[#1c1c1c]"> Set Dinner Menu </MyButton>
+        </div>
+        <div className="flex flex-col gap-8">
+          <MenuCard imageAlignment="Left" imageUrl="/menu-item-1.png" ingredients="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus. Donec vitae vulputate nunc, in laoreet urna." price={50} title="Juicy Steak"  />
+          <MenuCard imageAlignment="Right" imageUrl="/menu-item-1.png" ingredients="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus. Donec vitae vulputate nunc, in laoreet urna." price={50} title="Juicy Steak"  />
+          <MenuCard imageAlignment="Left" imageUrl="/menu-item-1.png" ingredients="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus. Donec vitae vulputate nunc, in laoreet urna." price={50} title="Juicy Steak"  />
+          <MenuCard imageAlignment="Right" imageUrl="/menu-item-1.png" ingredients="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus. Donec vitae vulputate nunc, in laoreet urna." price={50} title="Juicy Steak"  />
+
+        </div>
       </div>
-      <Contact />
-      <Footer />
+      <div className="p-8 container mx-auto">
+        <HeaderText colorText="Feedback" cursiveText="Testimonial" text="Our Customer's"/>
+        <div className="flex gap-[55px]">
+          <ReviewCard customerName="Samantha H." customerPosition="Customer" reviewInNumber={5} reviewText="Every dish was a work of art. This is fine dining the service, the wine pairings, and the exquisite food at its absolute best." customerImageUrl="/about-1.png"/>
+          <ReviewCard customerName="Samantha H." customerPosition="Customer" reviewInNumber={5} reviewText="Every dish was a work of art. This is fine dining the service, the wine pairings, and the exquisite food at its absolute best." customerImageUrl="/about-1.png"/>
+          <ReviewCard customerName="Samantha H." customerPosition="Customer" reviewInNumber={5} reviewText="Every dish was a work of art. This is fine dining the service, the wine pairings, and the exquisite food at its absolute best." customerImageUrl="/about-1.png"/>
+        </div>
+      </div>
     </div>
   );
 }

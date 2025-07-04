@@ -45,6 +45,12 @@ export class FoodsController {
   }
 
   @Auth(AuthType.None)
+  @Get("foods/popular")
+  popularFoods() {
+    return this.foodsService.findPopularFoods();
+  }
+
+  @Auth(AuthType.None)
   @Get("foods/available")
   availableFoods() {
     return this.foodsService.findAvailableFoods();
