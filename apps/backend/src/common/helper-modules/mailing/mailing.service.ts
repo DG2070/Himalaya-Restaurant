@@ -1,5 +1,5 @@
-import { MailerService } from '@nestjs-modules/mailer';
-import { Injectable } from '@nestjs/common';
+import { MailerService } from "@nestjs-modules/mailer";
+import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class EmailService {
@@ -9,13 +9,15 @@ export class EmailService {
     to: string,
     subject: string,
     incommingHtml: string,
-    context: Record<string, any>,
+    context: Record<string, any>
   ) {
     let finalizedHTML = incommingHtml;
-    Object.keys(context).forEach((key) => {
-      const placeholder = new RegExp(`{{{\\s*${key}\\s*}}}`, 'g');
-      finalizedHTML = finalizedHTML.replace(placeholder, context[key]);
-    });
+    if (Object.keys(context).length > 0) {
+      Object.keys(context).forEach((key) => {
+        const placeholder = new RegExp(`{{{\\s*${key}\\s*}}}`, "g");
+        finalizedHTML = finalizedHTML.replace(placeholder, context[key]);
+      });
+    }
 
     await this.mailerService.sendMail({
       to,

@@ -51,7 +51,7 @@ export class FoodsService {
         throw new ConflictException(
           `You supplied duplicate Food "Hongkongese Name". Try again with unique Name.`
         );
-
+      console.log(error);
       throw new InternalServerErrorException(`Error saving Food.`);
     }
     return {
@@ -102,7 +102,7 @@ export class FoodsService {
 
   async update(id: number, updateFoodDto: UpdateFoodDto) {
     const foodGroup = await this.foodGroupsService.findOne(
-      updateFoodDto.foodGroupId
+      updateFoodDto.foodGroupId!
     );
 
     const food = await this.findOne(id);

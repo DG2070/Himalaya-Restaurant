@@ -1,6 +1,7 @@
 import {
   IsEmail,
   IsNotEmpty,
+  IsNumber,
   IsOptional,
   IsString,
   Matches,
@@ -23,11 +24,11 @@ export class CreateContactUsDto {
   @IsNotEmpty()
   email: string;
 
-  @IsString()
-  @Matches(/^(5|6|9)\d{7}$/, {
-    message:
-      "Phone number must be a valid 8-digit Hong Kong mobile number starting with 5, 6, or 9.",
-  })
+  @IsNumber()
+  // @Matches(/^(5|6|9)\d{7}$/, {
+  //   message:
+  //     "Phone number must be a valid 8-digit Hong Kong mobile number starting with 5, 6, or 9.",
+  // })
   @IsOptional()
   phoneNumber: number;
 
@@ -37,5 +38,5 @@ export class CreateContactUsDto {
 
   @IsString()
   @IsNotEmpty()
-  messasge: string;
+  message: string;
 }

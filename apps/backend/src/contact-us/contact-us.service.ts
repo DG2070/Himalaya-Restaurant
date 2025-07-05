@@ -1,107 +1,131 @@
-import { Injectable } from '@nestjs/common';
-import { CreateContactUsDto } from './dto/create-contact-us.dto';
-import { UpdateContactUsDto } from './dto/update-contact-us.dto';
+import {
+  Injectable,
+  InternalServerErrorException,
+  NotFoundException,
+} from "@nestjs/common";
+import { CreateContactUsDto } from "./dto/create-contact-us.dto";
+import { Repository } from "typeorm";
+import { ContactUs } from "./entities/contact-us.entity";
+import { InjectRepository } from "@nestjs/typeorm";
+import { safeError } from "src/common/helper-functions/safe-error.helper";
+import { runInTransaction } from "src/common/helper-functions/transaction.helper";
+import { EmailService } from "src/common/helper-modules/mailing/mailing.service";
+import { emailOnContactTemplate } from "src/common/helper-modules/mailing/html-as-constants/automatic-email-on-contact-us";
 
 @Injectable()
 export class ContactUsService {
-  create(createContactUsDto: CreateContactUsDto) {
+  constructor(
+    @InjectRepository(ContactUs)
+    private readonly contactUsRepository: Repository<ContactUs>,
+    private readonly emailService: EmailService
+  ) {}
+  async create(createContactUsDto: CreateContactUsDto) {
+    await this.emailService.sendMail(
+      createContactUsDto.email,
+      `Greetings from Himalaya Restaurant.`,
+      emailOnContactTemplate,
+      {}
+    );
 
+    const contactUsInstance = Object.assign(new ContactUs(), {
+      ...createContactUsDto,
+      isEmailSent: true,
+    });
 
-//   quotaRepository
+    const contactUs = this.contactUsRepository.create(contactUsInstance);
+    const [newContactUs, error] = await safeError(
+      runInTransaction(async (queryRunner) => {
+        return await queryRunner.manager.save(ContactUs, contactUs);
+      })
+    );
+    if (error)
+      throw new InternalServerErrorException(
+        `Error saving Contact Us Informations.`
+      );
 
-// [create-dto-instance]  createQuotaTypeDto
+    return {
+      success: true,
+      message: `Contact Us Informations has been saved successfully and an thanks email has been forwarded to the probable customer.`,
+    };
+  }
 
-// [create-d-t-o]  CreateQuotaTypeDto
+  async findAll() {
+    const [allContactUs, error] = await safeError(
+      this.contactUsRepository.find({
+        select: [
+          "id",
+          "firstName",
+          "lastName",
+          "location",
+          "email",
+          "isEmailSent",
+          "phoneNumber",
+          "subject",
+          "message",
+        ],
+      })
+    );
+    if (error)
+      throw new InternalServerErrorException(
+        `Error while fetching Contact Us Informations.`
+      );
+    return allContactUs;
+  }
 
-// [update-dto-instance]  updateQuotaTypeDto
+  async findAllEmails() {
+    const [allEmailsData, error] = await safeError(
+      this.contactUsRepository.find({
+        select: ["email"],
+      })
+    );
+    if (error)
+      throw new InternalServerErrorException(
+        `Error while fetching Contact Us Informations.`
+      );
+    const allEmails = allEmailsData.map((item) => item.email);
+    return allEmails;
+  }
 
-// [update-d-t-o]  UpdateQuotaTypeDto
+  async findOne(id: number) {
+    const [contactUs, error] = await safeError(
+      this.contactUsRepository.findOne({
+        select: [
+          "id",
+          "firstName",
+          "lastName",
+          "location",
+          "email",
+          "isEmailSent",
+          "phoneNumber",
+          "subject",
+          "message",
+        ],
+        where: {},
+      })
+    );
+    if (error)
+      throw new InternalServerErrorException(
+        `Error while fetching Contact Us Information.`
+      );
+    if (!contactUs)
+      throw new NotFoundException(`Contact Informations not found.`);
+    return contactUs;
+  }
 
-// [data-assigned-variable] quotaInstance
-
-// <created-object-variable> quota
-
-// <saved-data-variable> newQuota
-
-// <updated-data-variable> updatedQuota
-
-// <deleted-data-variable> deletedQuota
-
-// <all-data-variable> quotas
-
-// <message-variable-single> 
-
-// <message-variable-plural>
-
-
-constructor(
-  @InjectRepository(ContactUs)
-  private readonly [repository-instance]  : Repository<ContactUs>,
-) {}
-async create([create-dto-instance]:[create-d-t-o]) {
-  const [data-assigned-variable] = Object.assign(new ContactUs(), [create-dto-instance]);
-  const <created-object-variable> = this.[repository-instance].create([data-assigned-variable]);
-  const [<saved-data-variable>, error] = await safeError(
-    runInTransaction(async (queryRunner) => {
-      return await queryRunner.manager.save(ContactUs, <created-object-variable>);
-    }),
-  );
-  if (error) throw new InternalServerErrorException(`Error saving <message-variable-single>.`);
-  return {
-    success: true,
-    message: `<message-variable-single> has been saved successfully.`,
-  };
-}
-async findAll() {
-  const [<all-data-variable>, error] = await safeError(
-    this.[repository-instance] .find({
-      select: ['id'], //mention what to select
-    }),
-  );
-  if (error)
-    throw new InternalServerErrorException(`Error while fetching <message-variable-plural>.`);
-  return <all-data-variable>;
-}
-async findOne(id: number) {
-  const [<created-object-variable> , error] = await safeError(
-    this.[repository-instance] .findOne({
-      select: [], //what to select
-      where: { }, //search criteria
-    }),
-  );
-  if (error)
-    throw new InternalServerErrorException(`Error while fetching <message-variable-single>.`);
-  if (!<created-object-variable>) throw new NotFoundException(`<message-variable-single> not found.`);
-  return <created-object-variable>;
-}
-
-async update(id: number, [update-dto-instance]: [update-d-t-o]) {
-  const <created-object-variable> = await this.findOne(id);
-  Object.assign(<created-object-variable>, [update-dto-instance]);
-  const [<updated-data-variable> , error] = await safeError(
-    runInTransaction(async (queryRunner) => {
-      return await queryRunner.manager.save(ContactUs, <created-object-variable>);
-    }),
-  );
-  if (error) throw new InternalServerErrorException(`Error updating <message-variable-single>`);
-  return {
-    success: true,
-    message: `<message-variable-single> updated successfully.`,
-  };
-}
-
-async remove(id: number) {
-  const <created-object-variable> = await this.findOne(id);
-  const [<deleted-data-variable>, error] = await safeError(
-    runInTransaction(async (queryRunner) => {
-      return await queryRunner.manager.softRemove(ContactUs, <created-object-variable>);
-    }),
-  );
-  if (error) throw new InternalServerErrorException(`Error deleting <message-variable-single>.`);
-  return {
-    success: true,
-    message: `<message-variable-single> deleted successfully.`,
-  };
-}
-
+  async remove(id: number) {
+    const contactUs = await this.findOne(id);
+    const [deletedContactUs, error] = await safeError(
+      runInTransaction(async (queryRunner) => {
+        return await queryRunner.manager.softRemove(ContactUs, contactUs);
+      })
+    );
+    if (error)
+      throw new InternalServerErrorException(
+        `Error deleting Contact Information.`
+      );
+    return {
+      success: true,
+      message: `Contact Us Information deleted successfully.`,
+    };
+  }
 }
