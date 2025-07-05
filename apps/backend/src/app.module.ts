@@ -12,6 +12,8 @@ import { MailingModule } from "./common/helper-modules/mailing/mailing.module";
 import { FoodsModule } from "./foods/foods.module";
 import { FoodGroupsModule } from "./food-groups/food-groups.module";
 import { ContactUsModule } from "./contact-us/contact-us.module";
+import { CustomerFeedbacksModule } from "./customer-feedbacks/customer-feedbacks.module";
+import { CloudinaryModule } from "./common/helper-modules/cloudinary/cloudinary.module";
 
 @Module({
   imports: [
@@ -19,6 +21,7 @@ import { ContactUsModule } from "./contact-us/contact-us.module";
     DatabaseModule,
     RedisModule,
     MailingModule,
+    CloudinaryModule,
     HashingModule,
     PermissionModule,
     RoleModule,
@@ -27,6 +30,7 @@ import { ContactUsModule } from "./contact-us/contact-us.module";
     FoodGroupsModule,
     FoodsModule,
     ContactUsModule,
+    CustomerFeedbacksModule,
   ],
   providers: [
     {

@@ -33,9 +33,9 @@ export class CreateFoodDto {
   @IsNotEmpty()
   priceHKDollar: number;
 
-  // @IsUrl()
-  // @IsNotEmpty({ message: `Give food's an unique image url.` })
-  // imageURL: string;
+  @IsUrl()
+  @IsNotEmpty({ message: `Give food's an unique image url.` })
+  imageURL: string;
 
   @Transform(({ value }) => {
     if (value === "true") return true;

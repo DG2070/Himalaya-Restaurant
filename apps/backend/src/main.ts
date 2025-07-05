@@ -2,8 +2,6 @@ import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
 import { ConfigService } from "@nestjs/config";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
-import { AppDataSource } from "./database/data-source";
-import { Logger } from "@nestjs/common";
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -13,15 +11,6 @@ async function bootstrap() {
     allowedHeaders: "*",
     methods: "*",
   });
-
-  const logger = new Logger("Bootstrap");
-  await AppDataSource.initialize()
-    .then(() => {
-      logger.log("Data Source has been initialized!");
-    })
-    .catch((err) => {
-      logger.error("Error during Data Source initialization:", err);
-    });
 
   const configService = app.get<ConfigService>(ConfigService);
   const environment: string =

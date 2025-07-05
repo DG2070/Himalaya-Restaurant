@@ -16,8 +16,8 @@ export class Food extends CommonEntity {
   @Column({ name: "price_hk_dollar" })
   priceHKDollar: number;
 
-  // @Column({ unique: true })
-  // imageURL: string;
+  @Column({ unique: true })
+  imageURL: string;
 
   @Column({ name: "is_available", default: true })
   isAvailable: boolean;
