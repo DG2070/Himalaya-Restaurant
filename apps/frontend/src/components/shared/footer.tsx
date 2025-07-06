@@ -74,8 +74,8 @@ const FooterItems = [
 
 const Footer = () => {
   return (
-    <div className="bg-black">
-      <div className="bg-gradient-to-t from-[#5B2E1E80] to-transparent py-11 px-10 flex items-center justify-between">
+    <div className="bg-black bg-gradient-to-t from-[#5B2E1E80] to-transparent ">
+      <div className=" py-11 px-10 flex items-center justify-between container mx-auto">
         <div className="space-y-[18px]">
           <div className="flex items-center gap-2 sm:gap-4">
             <Image

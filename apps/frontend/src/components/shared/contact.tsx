@@ -44,9 +44,9 @@ export default function Contact() {
                 <path
                   d="M23 12.75C23 18.8251 18.0751 23.75 12 23.75M23 12.75C23 6.67487 18.0751 1.75 12 1.75M23 12.75H1M12 23.75C5.92487 23.75 1 18.8251 1 12.75M12 23.75C9.17546 20.7842 7.6 16.8456 7.6 12.75C7.6 8.65441 9.17546 4.71577 12 1.75M12 23.75C14.8245 20.7842 16.4 16.8456 16.4 12.75C16.4 8.65441 14.8245 4.71577 12 1.75M1 12.75C1 6.67487 5.92487 1.75 12 1.75"
                   stroke="#F2F2F2"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>{" "}
               <span className="lato-regular-18 text-heading">
@@ -110,7 +110,7 @@ export default function Contact() {
         <div className="space-y-6 w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label className="text-[#ffffff] text-lg font-medium">
+              <label className="text-[#ffffff] playfair-medium-22">
                 First Name
               </label>
               <Input
@@ -119,7 +119,7 @@ export default function Contact() {
               />
             </div>
             <div className="space-y-2">
-              <label className="text-[#ffffff] text-lg font-medium">
+              <label className="text-[#ffffff] playfair-medium-22">
                 Last Name
               </label>
               <Input
@@ -131,7 +131,7 @@ export default function Contact() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label className="text-[#ffffff] text-lg font-medium">
+              <label className="text-[#ffffff] playfair-medium-22">
                 Email
               </label>
               <Input
@@ -141,7 +141,7 @@ export default function Contact() {
               />
             </div>
             <div className="space-y-2">
-              <label className="text-[#ffffff] text-lg font-medium">
+              <label className="text-[#ffffff] playfair-medium-22">
                 Phone Number
               </label>
               <Input
@@ -153,7 +153,7 @@ export default function Contact() {
           </div>
 
           <div className="space-y-2">
-            <label className="text-[#ffffff] text-lg font-medium">
+            <label className="text-[#ffffff] playfair-medium-22">
               Message
             </label>
             <Textarea

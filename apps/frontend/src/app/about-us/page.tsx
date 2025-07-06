@@ -1,10 +1,12 @@
 import GradientText from "@/components/shared/gradient-text";
 import HeaderText from "@/components/shared/header-text";
+import Hero from "@/components/shared/hero";
 import Image from "next/image";
 
 const Page = () => {
   return (
     <div className="bg-black text-body ">
+      <Hero image="/about-1.png" subtitle2="Us" subtitle1="About" description="A 47-year culinary journey blending timeless Indian traditions with global inspiration.At Central Indian Restaurant, every dish is a celebration of flavor, culture, and connection." />
       <HeaderText
         cursiveText="Our Foundation"
         text="The Story Behind"

@@ -1,11 +1,13 @@
 import HeaderText from "@/components/shared/header-text";
 import PopularItemsCard from "@/components/shared/popular-items-card";
-
-// const MenuItems = [{}];
+import Hero from "@/components/shared/hero";
+import MyButton from "@/components/shared/my-button";
+import MenuCard from "@/components/shared/menu-card";
 
 const Menu = () => {
   return (
     <div className="bg-black">
+      <Hero image="/menu-item-1.png" subtitle2="Menu" subtitle1="Our" description="A curated selection of timeless Indian flavors, thoughtfully crafted with passion, rooted in centuries of tradition, and reimagined with a touch of modern flair." />
       <HeaderText
         cursiveText="Customers Favourite"
         text="Our Popular"
@@ -47,11 +49,24 @@ const Menu = () => {
           />
         ))}
       </div>
-      <HeaderText
-        cursiveText="Good Food  For You"
-        text="Restaurant"
-        colorText="Menu"
-      />
+    
+       <div className="p-8 container mx-auto">
+        <HeaderText colorText="Menu" cursiveText="Good Food FOr You" text="Resturant "/>
+        <div className="flex pb-8 gap-[22px] w-full items-center justify-center">
+          <MyButton active className="lato-semibold-16 text-heading"> Alacarte Menu </MyButton>
+          <MyButton className="lato-semibold-16 text-[#1c1c1c]"> Drinks Menu </MyButton>
+          <MyButton className="lato-semibold-16 text-[#1c1c1c]"> Set Lunch Menu </MyButton>
+          <MyButton className="lato-semibold-16 text-[#1c1c1c]"> All Day Brunch Menu </MyButton>
+          <MyButton className="lato-semibold-16 text-[#1c1c1c]"> Set Dinner Menu </MyButton>
+        </div>
+        <div className="flex flex-col gap-8">
+          <MenuCard imageAlignment="Left" imageUrl="/menu-item-1.png" ingredients="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus. Donec vitae vulputate nunc, in laoreet urna." price={50} title="Juicy Steak"  />
+          <MenuCard imageAlignment="Right" imageUrl="/menu-item-1.png" ingredients="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus. Donec vitae vulputate nunc, in laoreet urna." price={50} title="Juicy Steak"  />
+          <MenuCard imageAlignment="Left" imageUrl="/menu-item-1.png" ingredients="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus. Donec vitae vulputate nunc, in laoreet urna." price={50} title="Juicy Steak"  />
+          <MenuCard imageAlignment="Right" imageUrl="/menu-item-1.png" ingredients="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus. Donec vitae vulputate nunc, in laoreet urna." price={50} title="Juicy Steak"  />
+
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,38 +1,3 @@
-// import Image from 'next/image'
-// import Link from 'next/link'
-// import GradientText from './gradient-text'
-
-// const Navbar = () => {
-//   return (
-//     <header className="w-full px-8 py-3">
-//       <div className="flex items-center justify-between">
-//         <div className="flex items-center gap-4">
-//             <Image  src={"/nav-img.png"} alt='naviagation image' width={50} height={50}/>
-//         </div>
-
-//         <nav className="flex items-center gap-8 playfair-medium-22">
-//           <Link href="/" >
-//             <GradientText text='Home' />
-//           </Link>
-//           <Link href="/about-us" className='text-heading '>
-//             About US
-//           </Link>
-//           <Link href="/menu" className='text-heading'>
-//             Menu
-//           </Link>
-//           <Link href="/gallery" className='text-heading'>
-//             Gallery
-//           </Link>
-//           <Link href="/contact-us" className='text-heading'>
-//             Contact Us
-//           </Link>
-//         </nav>
-//       </div>
-//     </header>
-//   )
-// }
-
-// export default Navbar
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import Image from "next/image";
@@ -65,7 +30,7 @@ const Navbar = () => {
 
   return (
     <div className="w-full px-4 sm:px-6 lg:px-8 py-3 bg-black">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between container mx-auto">
         {/* Logo Section */}
         <div className="flex items-center gap-2 sm:gap-4">
           <Image

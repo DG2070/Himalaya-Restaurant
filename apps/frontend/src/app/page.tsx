@@ -1,3 +1,4 @@
+import Contact from "@/components/shared/contact";
 import Discover from "@/components/shared/discover";
 import HeaderText from "@/components/shared/header-text";
 import Hero from "@/components/shared/hero";
@@ -100,6 +101,10 @@ export default function Home() {
           <ReviewCard customerName="Samantha H." customerPosition="Customer" reviewInNumber={5} reviewText="Every dish was a work of art. This is fine dining the service, the wine pairings, and the exquisite food at its absolute best." customerImageUrl="/about-1.png"/>
           <ReviewCard customerName="Samantha H." customerPosition="Customer" reviewInNumber={5} reviewText="Every dish was a work of art. This is fine dining the service, the wine pairings, and the exquisite food at its absolute best." customerImageUrl="/about-1.png"/>
         </div>
+      </div>
+      <div className="p-8 container mx-auto">
+        <HeaderText colorText="Orders" cursiveText="Contact" text="Contact Us For"/>
+        <Contact />
       </div>
     </div>
   );
