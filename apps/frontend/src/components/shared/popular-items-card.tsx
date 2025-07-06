@@ -13,22 +13,37 @@ const PopularItemsCard = ({
   price,
 }: PopularItemsCardProps) => {
   return (
-    <div className="rounded-[20px] p-5 flex flex-col w-full bg-black  justify-between relative h-[283px]">
-      <div className="absolute right-0 top-0 rounded-[20px]">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
+    <div className="group relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 rounded-xl md:rounded-2xl overflow-hidden bg-black transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
+      {/* Background Image with Gradient Overlay */}
+      <div className="absolute inset-0 w-full h-full">
         <img
           src={imageUrl}
-          className="h-[283px] rounded-r-[18px]"
           alt={title}
+          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
         />
-        <div className="absolute bg-gradient-to-r from-black to-transparent from-10% top-0  w-full h-[283px] "></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
       </div>
-      <div className="flex  flex-col gap-3 z-[10]">
-        <div className="playfair-semibold-24 text-primary">{title}</div>
-        <div className="lato-regular-18 text-white">{subtitle}</div>
-      </div>
-      <div className="z-[10]">
-        <GradientText text={`$${price}`} className="cinzel-bold-34 py-1" />
+      
+      {/* Content */}
+      <div className="relative h-full flex flex-col justify-between p-4 sm:p-5 md:p-6 z-10">
+        <div className="space-y-1 sm:space-y-2">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-playfair text-primary">
+            {title}
+          </h3>
+          {subtitle && (
+            <p className="text-sm sm:text-base md:text-lg text-white/90 font-light max-w-xs md:max-w-sm lg:max-w-md">
+              {subtitle}
+            </p>
+          )}
+        </div>
+        
+        <div className="mt-2 sm:mt-4">
+          <GradientText 
+            text={`$${price.toFixed(2)}`} 
+            className="text-2xl sm:text-3xl md:text-4xl font-bold font-cinzel" 
+          />
+        </div>
       </div>
     </div>
   );

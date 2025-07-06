@@ -13,6 +13,9 @@ export class Event extends CommonEntity {
   @Column({ name: "show_event", default: true })
   showEvent: boolean;
 
+  @Column({ name: "featured_event", default: false })
+  featuredEvent: boolean;
+
   @OneToMany(() => EventImageURL, (eventImageURL) => eventImageURL.event, {
     cascade: true,
   })
