@@ -108,7 +108,6 @@ const Menu = () => {
             colorText="Menu" 
             cursiveText="Culinary Excellence" 
             text="Explore Our"
-            className="mb-8 md:mb-12"
           />
           
           {/* Menu Categories */}
