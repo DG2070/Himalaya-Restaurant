@@ -6,14 +6,14 @@ import { Mail, MapPin } from "lucide-react";
 export default function Contact() {
   return (
     <div
-      className="rounded-3xl w-full px-[65px] py-[71px]"
+      className="rounded-3xl w-full px-4 sm:px-8 md:px-12 lg:px-[65px] py-8 sm:py-12 md:py-16 lg:py-[71px]"
       style={{
         background:
           "linear-gradient(to right, #3a3a3a 0%, #2a2a2a 70%, #1a1a1a 100%)",
       }}
     >
-      <div className="flex flex-col md:flex-row gap-[69px] w-full items-center justify-between">
-        <div className="bg-black/20 rounded-[30px] p-16 space-y-6 w-[492px]">
+      <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-[69px] w-full items-stretch justify-between">
+        <div className="bg-black/20 rounded-[30px] p-6 sm:p-8 md:p-12 lg:p-16 space-y-6 w-full lg:w-[492px] lg:flex-shrink-0">
           <div className="space-y-[29px]">
             <div className="flex items-center gap-[22px] text-heading">
               <svg
@@ -28,7 +28,7 @@ export default function Contact() {
                   fill="#F2F2F2"
                 />
               </svg>{" "}
-              <span className="lato-regular-18 text-heading">
+              <span className="text-sm sm:text-base lato-regular-18 text-heading break-words">
                 2527-5899 Fax: 2527-4899
               </span>
             </div>
@@ -49,21 +49,21 @@ export default function Contact() {
                   strokeLinejoin="round"
                 />
               </svg>{" "}
-              <span className="lato-regular-18 text-heading">
+              <span className="text-sm sm:text-base lato-regular-18 text-heading break-words">
                 www.himalayanrestaurant.com.hk
               </span>
             </div>
 
             <div className="flex items-center gap-[22px] text-heading">
               <Mail className="w-5 h-5 flex-shrink-0" />
-              <span className="lato-regular-18 text-heading">
+              <span className="text-sm sm:text-base lato-regular-18 text-heading break-words">
                 himalayan.2007hk@gmail.com
               </span>
             </div>
 
             <div className="flex items-center gap-[22px] text-heading">
               <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
-              <div className="lato-regular-18 text-heading flex flex-col gap-[18px]">
+              <div className="text-sm sm:text-base lato-regular-18 text-heading flex flex-col gap-3 sm:gap-[18px]">
                 <div>1/F A 22-30</div>
                 <div>Tai Wong Street</div>
                 <div>East Wanchai HK</div>
@@ -72,10 +72,10 @@ export default function Contact() {
           </div>
 
           <div className="pt-8">
-            <h3 className="text-[#ffffff] text-xl font-medium mb-4">
+            <h3 className="text-[#ffffff] text-lg sm:text-xl font-medium mb-4">
               Connect with us
             </h3>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
               <div className="w-10 h-10 bg-[#1d9bf0] rounded-lg flex items-center justify-center">
                 <svg
                   className="w-5 h-5 text-white"
@@ -107,46 +107,46 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="space-y-6 w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-6 w-full max-w-2xl lg:max-w-none">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-2">
-              <label className="text-[#ffffff] playfair-medium-22">
+              <label className="text-[#ffffff] text-base sm:text-lg md:text-xl playfair-medium-22">
                 First Name
               </label>
               <Input
-                className="bg-transparent border-0 border-b border-[#ffffff] rounded-none px-0 pb-2 text-[#ffffff] placeholder:text-[#e0e0e0] focus-visible:ring-0 focus-visible:border-[#ffffff]"
+                className="bg-transparent border-0 border-b border-[#ffffff] rounded-none px-0 pb-2 text-sm sm:text-base text-[#ffffff] placeholder:text-[#e0e0e0] focus-visible:ring-0 focus-visible:border-[#ffffff]"
                 placeholder=""
               />
             </div>
             <div className="space-y-2">
-              <label className="text-[#ffffff] playfair-medium-22">
+              <label className="text-[#ffffff] text-base sm:text-lg md:text-xl playfair-medium-22">
                 Last Name
               </label>
               <Input
-                className="bg-transparent border-0 border-b border-[#ffffff] rounded-none px-0 pb-2 text-[#ffffff] placeholder:text-[#e0e0e0] focus-visible:ring-0 focus-visible:border-[#ffffff]"
+                className="bg-transparent border-0 border-b border-[#ffffff] rounded-none px-0 pb-2 text-sm sm:text-base text-[#ffffff] placeholder:text-[#e0e0e0] focus-visible:ring-0 focus-visible:border-[#ffffff]"
                 placeholder=""
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-2">
-              <label className="text-[#ffffff] playfair-medium-22">
+              <label className="text-[#ffffff] text-base sm:text-lg md:text-xl playfair-medium-22">
                 Email
               </label>
               <Input
                 type="email"
-                className="bg-transparent border-0 border-b border-[#ffffff] rounded-none px-0 pb-2 text-[#ffffff] placeholder:text-[#e0e0e0] focus-visible:ring-0 focus-visible:border-[#ffffff]"
+                className="bg-transparent border-0 border-b border-[#ffffff] rounded-none px-0 pb-2 text-sm sm:text-base text-[#ffffff] placeholder:text-[#e0e0e0] focus-visible:ring-0 focus-visible:border-[#ffffff]"
                 placeholder=""
               />
             </div>
             <div className="space-y-2">
-              <label className="text-[#ffffff] playfair-medium-22">
+              <label className="text-[#ffffff] text-base sm:text-lg md:text-xl playfair-medium-22">
                 Phone Number
               </label>
               <Input
                 type="tel"
-                className="bg-transparent border-0 border-b border-[#ffffff] rounded-none px-0 pb-2 text-[#ffffff] placeholder:text-[#e0e0e0] focus-visible:ring-0 focus-visible:border-[#ffffff]"
+                className="bg-transparent border-0 border-b border-[#ffffff] rounded-none px-0 pb-2 text-sm sm:text-base text-[#ffffff] placeholder:text-[#e0e0e0] focus-visible:ring-0 focus-visible:border-[#ffffff]"
                 placeholder=""
               />
             </div>
@@ -157,13 +157,13 @@ export default function Contact() {
               Message
             </label>
             <Textarea
-              className="bg-transparent border-0 border-b border-[#ffffff] rounded-none px-0 pb-2 text-[#ffffff] placeholder:text-[#e0e0e0] focus-visible:ring-0 focus-visible:border-[#ffffff] resize-none min-h-[100px]"
+              className="bg-transparent border-0 border-b border-[#ffffff] rounded-none px-0 pb-2 text-sm sm:text-base text-[#ffffff] placeholder:text-[#e0e0e0] focus-visible:ring-0 focus-visible:border-[#ffffff] resize-none min-h-[100px]"
               placeholder=""
             />
           </div>
 
           <div className="pt-4">
-            <Button className="bg-[#e67e22] hover:bg-[#d35400] text-white px-8 py-3 rounded-lg text-lg font-medium">
+            <Button className="bg-[#e67e22] hover:bg-[#d35400] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg text-base sm:text-lg font-medium w-full sm:w-auto">
               Email Us
             </Button>
           </div>

@@ -23,19 +23,26 @@ const DiscoverData = [
 ];
 const Discover = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center">
-      <div className="h-[498px]  w-full relative">
-        <Image alt="discover image" src={"/Subtract.png"} layout="fill" />
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
+      <div className="w-full h-64 sm:h-80 md:h-96 lg:h-[498px] relative rounded-lg overflow-hidden">
+        <Image 
+          alt="discover image" 
+          src={"/Subtract.png"} 
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          priority
+        />
       </div>
-      <div className="flex gap-3 flex-col justify-center">
-        <div className="text-[#E0E0E0] lato-regular-22">
+      <div className="flex flex-col gap-4 sm:gap-6 md:gap-8">
+        <p className="text-[#E0E0E0] text-base sm:text-lg md:text-xl lg:text-[22px] leading-relaxed lato">
           At Luxe Fine Dining, we don&apos;t just serve food we craft
           unforgettable experiences. With an unwavering commitment to quality,
           artistry, and hospitality.
-        </div>
-        <div className="flex flex-col gap-3 ">
+        </p>
+        <div className="flex flex-col gap-4 sm:gap-6">
           {DiscoverData?.map((a, index) => (
-            <div key={index}>
+            <div key={index} className="w-full">
               <DiscoverText
                 image={a.image}
                 description={a.description}
