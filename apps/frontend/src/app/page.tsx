@@ -32,7 +32,7 @@ export default function Home() {
       </section>
 
       {/* Popular Items Section */}
-      <section className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 container mx-auto bg-gray-50">
+      <section className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 container mx-auto">
         <HeaderText
           colorText="Items"
           cursiveText="Customers Favourite"
@@ -118,7 +118,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 container mx-auto bg-gray-50">
+      <section className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 container mx-auto">
         <HeaderText 
           colorText="Feedback" 
           cursiveText="Testimonial" 
@@ -160,12 +160,13 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 container mx-auto">
+        </section>
+   
+   
+      <div className="p-8 container mx-auto">
+        <HeaderText colorText="Orders" cursiveText="Contact" text="Contact Us For"/>
         <Contact />
-      </section>
+      </div>
     </div>
   );
 }
