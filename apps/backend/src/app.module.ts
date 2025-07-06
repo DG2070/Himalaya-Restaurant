@@ -14,6 +14,7 @@ import { FoodGroupsModule } from "./food-groups/food-groups.module";
 import { ContactUsModule } from "./contact-us/contact-us.module";
 import { CustomerFeedbacksModule } from "./customer-feedbacks/customer-feedbacks.module";
 import { CloudinaryModule } from "./common/helper-modules/cloudinary/cloudinary.module";
+import { EventsModule } from './events/events.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { CloudinaryModule } from "./common/helper-modules/cloudinary/cloudinary.
     FoodsModule,
     ContactUsModule,
     CustomerFeedbacksModule,
+    EventsModule,
   ],
   providers: [
     {
