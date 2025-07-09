@@ -15,7 +15,7 @@ import { ContactUsModule } from "./contact-us/contact-us.module";
 import { CustomerFeedbacksModule } from "./customer-feedbacks/customer-feedbacks.module";
 import { CloudinaryModule } from "./common/helper-modules/cloudinary/cloudinary.module";
 import { EventsModule } from "./events/events.module";
-import { NullToEmptyStringPipe } from "./common/pipes/null-to-empty-string.pipe";
+import { RemoveNullAndUndefinedPipe } from "./common/pipes/remove-null-and-undefined.pipe";
 
 @Module({
   imports: [
@@ -38,7 +38,7 @@ import { NullToEmptyStringPipe } from "./common/pipes/null-to-empty-string.pipe"
   providers: [
     {
       provide: APP_PIPE,
-      useClass: NullToEmptyStringPipe,
+      useClass: RemoveNullAndUndefinedPipe,
     },
     {
       provide: APP_PIPE,

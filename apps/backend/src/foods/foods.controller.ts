@@ -65,8 +65,10 @@ export class FoodsController {
   @Auth(AuthType.Bearer)
   @RequiredPermissions(RolePermissions.updateData)
   @Patch("foods/:id")
-  update(@Param("id") id: string, @Body() updateFoodDto: UpdateFoodDto) {
-    return this.foodsService.update(+id, updateFoodDto);
+  update(@Param("id") id: string, @Body() updateFoodDto: any) {
+    console.log(updateFoodDto.hehe[0].haha[0].meow);
+    // return this.foodsService.update(+id, updateFoodDto);
+    return;
   }
 
   @Auth(AuthType.Bearer)
