@@ -7,8 +7,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { getRouteApi, useNavigate } from "@tanstack/react-router";
-import { ChevronUp, ChevronDown } from "lucide-react";
+import { useNavigate, useSearch } from "@tanstack/react-router";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface TeamToolbarProps {
   column: any;
@@ -21,23 +21,27 @@ export default function TeamToolbar({
   title,
   button,
 }: TeamToolbarProps) {
-  const route = getRouteApi("/_admin/application");
-  const navigate = useNavigate({ from: "/application" });
-  const searchParams = route.useSearch();
+  const navigate = useNavigate();
+  const searchParams = useSearch({ strict: false });
   const { searchIn, searchBy, orderBy } = searchParams as any;
 
   const handleSearchByChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    navigate({ search: (prev) => ({ ...prev, searchBy: e.target.value }) });
+    navigate({
+      search: (prev: any) => ({ ...prev, searchBy: e.target.value }),
+    } as never);
   };
 
   const handleSearchInChange = (value: string) => {
     navigate({
-      search: (prev) => ({ ...prev, searchIn: value, sortBy: value }),
+      search: (prev: any) =>
+        ({ ...prev, searchIn: value, sortBy: value }) as never,
     });
   };
 
   const handleOrderByChange = (direction: "ASC" | "DESC") => {
-    navigate({ search: (prev) => ({ ...prev, orderBy: direction }) });
+    navigate({
+      search: (prev: any) => ({ ...prev, orderBy: direction }),
+    } as never);
   };
 
   return (
