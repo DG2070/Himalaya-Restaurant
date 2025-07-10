@@ -43,7 +43,6 @@ export class CloudinaryController {
     })
   )
   async uploadImage(@UploadedFile() file: Express.Multer.File) {
-    console.log("hello");
     const folderName = this.configService.get<string>("CLOUDINARY_FOLDER_NAME");
     const response = await this.cloudinaryService.uploadFile(folderName!, file);
     return response;

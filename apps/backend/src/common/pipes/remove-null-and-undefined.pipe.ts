@@ -2,7 +2,9 @@ import { PipeTransform, Injectable, ArgumentMetadata } from "@nestjs/common";
 
 @Injectable()
 export class RemoveNullAndUndefinedPipe implements PipeTransform {
-  transform(value: unknown, _metadata: ArgumentMetadata): unknown {
+  transform(value: unknown, metadata: ArgumentMetadata): unknown {
+    if (metadata.type !== "body") return value;
+
     if (typeof value !== "object" || value === null) return value;
 
     return removeNullUndefinedAndEmptyObjects(value);
