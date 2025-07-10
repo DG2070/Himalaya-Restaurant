@@ -1,36 +1,38 @@
+"use client"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import GradientText from "./gradient-text";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-  // Navigation items array to avoid duplication
-  const navItems = [
-    { href: "/", label: "Home", isGradient: true },
-    { href: "/about-us", label: "About Us", isGradient: false },
-    { href: "/menu", label: "Menu", isGradient: false },
-    { href: "/gallery", label: "Gallery", isGradient: false },
-    { href: "/contact-us", label: "Contact Us", isGradient: false },
-  ];
+    const active = usePathname()
 
+  const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/about-us", label: "About Us" },
+    { href: "/menu", label: "Menu" },
+    { href: "/gallery", label: "Gallery"},
+    { href: "/contact-us", label: "Contact Us"},
+  ];
   const NavLink = ({
     item,
   }: {
-    item: { href: string; label: string; isGradient: boolean };
+    item: { href: string; label: string;  };
   }) => (
-    <Link 
-      href={item.href} 
+    <Link
+      href={item.href}
       className={`px-3 py-2 text-base font-medium transition-colors duration-200 ${
-        item.isGradient 
-          ? 'bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:opacity-90' 
-          : 'text-heading hover:text-primary'
+        (item.href) === active
+          ? "bg-linear bg-clip-text text-transparent hover:opacity-90"
+          : "text-heading hover:text-primary"
       }`}
     >
-      {item.isGradient ? (
+      {item.href === active ? (
         <GradientText text={item.label} className="text-lg sm:text-xl" />
       ) : (
-        <span className="text-base sm:text-lg">{item.label}</span>
+        <span className="text-lg sm:text-xl">{item.label}</span>
       )}
     </Link>
   );
@@ -59,19 +61,14 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
             {navItems.map((item, index) => (
               <div key={item.href} className="relative group">
-                <NavLink 
-                  item={item} 
-                />
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></div>
+                <NavLink item={item} />
               </div>
             ))}
           </nav>
 
-          {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center">
             <Sheet>
               <SheetTrigger asChild>
@@ -82,8 +79,8 @@ const Navbar = () => {
                   <Menu className="block h-6 w-6" aria-hidden="true" />
                 </button>
               </SheetTrigger>
-              <SheetContent 
-                side="right" 
+              <SheetContent
+                side="right"
                 className="w-full max-w-xs sm:max-w-md bg-black/95 border-l border-gray-800 backdrop-blur-lg"
               >
                 <div className="flex flex-col h-full">
@@ -111,7 +108,7 @@ const Navbar = () => {
                         href={item.href}
                         className="group flex items-center px-3 py-3 text-base font-medium rounded-md transition-colors duration-200 hover:bg-gray-800/50"
                       >
-                        {item.isGradient ? (
+                        {item.href === active ? (
                           <GradientText text={item.label} className="text-lg" />
                         ) : (
                           <span className="text-heading group-hover:text-primary transition-colors">
@@ -125,7 +122,7 @@ const Navbar = () => {
               </SheetContent>
             </Sheet>
           </div>
-      </div>
+        </div>
       </div>
     </header>
   );

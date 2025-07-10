@@ -68,7 +68,7 @@ const Menu = () => {
   ];
 
   return (
-    <div className="bg-black text-white">
+    <div className=" text-white">
       {/* Hero Section */}
       <Hero 
         image="/menu-item-1.png" 
@@ -78,7 +78,7 @@ const Menu = () => {
       />
       
       {/* Popular Items Section */}
-      <section className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900">
+      <section className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 ">
         <div className="container mx-auto">
           <HeaderText
             cursiveText="Customers' Favorites"
